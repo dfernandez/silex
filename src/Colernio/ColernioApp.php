@@ -17,6 +17,6 @@ class ColernioApp extends DoughApp
 
     private function mountControllers()
     {
-        $this->get('/', IndexController::class.'::indexAction');
+        $this->mount('/', IndexController::mount($this['controllers_factory']));
     }
 }
