@@ -2,4 +2,5 @@
 bin/
 composer.lock
 config/local.php
+var/
 vendor/

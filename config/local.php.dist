@@ -4,7 +4,7 @@ $config = require('global.php');
 
 # monolog
 $config['monolog']['monolog.level']   = \Monolog\Logger::DEBUG;
-$config['monolog']['monolog.logfile'] = __DIR__.'/../logs/dev.log';
+$config['monolog']['monolog.logfile'] = __DIR__.'/../var/logs/dev.log';
 
 # debug
 $config['debug'] = true;
