@@ -2,15 +2,15 @@
 
 namespace Colernio\Controllers;
 
-use Colernio\Application;
+use Colernio\ColernioApp;
 use Symfony\Component\HttpFoundation\Response;
 
 class IndexController
 {
-    public function indexAction(Application $app)
+    public function indexAction(ColernioApp $app)
     {
         $response = new Response();
-        $response->setStatusCode(Response::HTTP_BAD_REQUEST);
+        $response->setStatusCode(Response::HTTP_OK);
 
         return $app->render('indexController/index.twig', [], $response);
     }

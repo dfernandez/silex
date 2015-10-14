@@ -1,8 +1,8 @@
 <?php
 
-use Colernio\Application;
+use Colernio\ColernioApp;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$app = new Application(['debug' => true]);
+$app = new ColernioApp();
 $app->run();
