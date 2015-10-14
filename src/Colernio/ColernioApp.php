@@ -3,6 +3,7 @@
 namespace Colernio;
 
 use Colernio\Controllers\IndexController;
+use Colernio\Controllers\UserController;
 use Dough\DoughApp;
 
 class ColernioApp extends DoughApp
@@ -17,6 +18,7 @@ class ColernioApp extends DoughApp
 
     private function mountControllers()
     {
-        $this->mount('/', IndexController::mount($this['controllers_factory']));
+        $this->mount('/',     IndexController::mount($this['controllers_factory']));
+        $this->mount('/user', UserController::mount($this['controllers_factory']));
     }
 }

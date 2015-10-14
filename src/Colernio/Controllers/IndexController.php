@@ -18,9 +18,6 @@ class IndexController implements ControllerInterface
 
     public function indexAction(ColernioApp $app)
     {
-        $response = new Response();
-        $response->setStatusCode(Response::HTTP_OK);
-
-        return $app->render('controllers/indexController/index.html.twig', [], $response);
+        return $app->render('controllers/indexController/index.html.twig');
     }
 }
