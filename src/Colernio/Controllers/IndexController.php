@@ -12,6 +12,6 @@ class IndexController
         $response = new Response();
         $response->setStatusCode(Response::HTTP_OK);
 
-        return $app->render('indexController/index.twig', [], $response);
+        return $app->render('controllers/indexController/index.html.twig', [], $response);
     }
 }

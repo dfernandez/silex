@@ -9,7 +9,7 @@ return [
 
     # twig
     'twig' => [
-        'twig.path' => __DIR__.'/../views',
+        'twig.path' => __DIR__.'/../src/Colernio/Views',
     ],
 
     # profiler
