@@ -1,8 +1,8 @@
 <?php
 
-use Colernio\ColernioApp;
+use ElDelantal\ElDelantal;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$app = new ColernioApp();
+$app = new ElDelantal();
 $app->run();

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse navbar-fixed-top custom-navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ app.url_generator.generate('IndexController::index') }}">El Delantal</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li {{ 'RecipesController::index' in app.request.attributes.get('_controller') ? 'class="active"' }}>
+                    <a href="{{ app.url_generator.generate('RecipesController::index') }}">Las recetas</a>
+                </li>
+                <li {{ 'FoodsController::index' in app.request.attributes.get('_controller') ? 'class="active"' }}>
+                    <a href="{{ app.url_generator.generate('FoodsController::index') }}">Los alimentos</a>
+                </li>
+                <li {{ 'CooksController::index' in app.request.attributes.get('_controller') ? 'class="active"' }}>
+                    <a href="{{ app.url_generator.generate('CooksController::index') }}">Los cocineros</a>
+                </li>
+                <li {{ 'MeasuresController::index' in app.request.attributes.get('_controller') ? 'class="active"' }}>
+                    <a href="{{ app.url_generator.generate('MeasuresController::index') }}">Las medidas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

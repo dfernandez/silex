@@ -1,0 +1,16 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block main %}
+
+    {% include 'layout/sidebar/sidebar.html.twig' %}
+
+    <div class="home-title">
+        <h1>El delantal</h1>
+        <p>Cocinar, saborear y disfrutar...</p>
+    </div>
+
+    <div class="home">
+        {% block content %}{% endblock %}
+    </div>
+
+{% endblock %}

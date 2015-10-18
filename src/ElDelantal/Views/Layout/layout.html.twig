@@ -8,14 +8,21 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    {% include 'layout/menu.html.twig' %}
-    <div class="container">{% block main %}{% endblock %}</div>
-    {% block footer %}{% endblock %}
+    {% include 'layout/helpers/fb-initializer.html.twig' %}
+
+    <a name="#top"></a>
+
+    <div class="main container">
+        {% include 'layout/menu.html.twig' %}
+        {% block main %}{% endblock %}
+        {% include 'layout/footer.html.twig' %}
+    </div>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     {% include 'layout/cookies.html.twig' %}
+
 </body>
 </html>
