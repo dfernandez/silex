@@ -21,7 +21,7 @@
                     <a href="{{ app.url_generator.generate('CooksController::index') }}">Los cocineros</a>
                 </li>
                 <li {{ 'MeasuresController::index' in app.request.attributes.get('_controller') ? 'class="active"' }}>
-                    <a href="{{ app.url_generator.generate('MeasuresController::index') }}">Las medidas</a>
+                    <a href="{{ app.url_generator.generate('UtensilsController::index') }}">Las utensilios</a>
                 </li>
             </ul>
         </div>
