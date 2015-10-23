@@ -19,7 +19,7 @@ class DoughApp extends Application
 
     public function __construct()
     {
-        $this->config = require(__DIR__ . '/../../config/local.php');
+        $this->config = require __DIR__.'/../../config/local.php';
 
         parent::__construct(['debug' => $this->config['debug']]);
 

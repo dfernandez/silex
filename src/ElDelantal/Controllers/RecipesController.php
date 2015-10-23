@@ -3,17 +3,13 @@
 namespace ElDelantal\Controllers;
 
 use ElDelantal\ElDelantal;
-use Dough\Controllers\ControllerInterface;
-use Silex\ControllerCollection;
-use Symfony\Component\HttpFoundation\Response;
+use ElDelantal\Model\Recipes;
 
-class RecipesController implements ControllerInterface
+class RecipesController
 {
-    public static function mount(ControllerCollection $controllersFactory)
+    public function __construct(Recipes $recipes)
     {
-        $controllersFactory->get('/', __CLASS__.'::indexAction')->bind('RecipesController::index');
-
-        return $controllersFactory;
+        ;
     }
 
     public function indexAction(ElDelantal $app)

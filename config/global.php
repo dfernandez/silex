@@ -3,7 +3,7 @@
 return [
     # monolog
     'monolog' => [
-        'monolog.level'   => \Monolog\Logger::WARNING,
+        'monolog.level' => \Monolog\Logger::WARNING,
         'monolog.logfile' => __DIR__.'/../var/logs/app.log',
     ],
 
@@ -14,7 +14,7 @@ return [
 
     # profiler
     'profiler' => [
-        'profiler.cache_dir'    => __DIR__.'/../var/cache/profiler',
+        'profiler.cache_dir' => __DIR__.'/../var/cache/profiler',
         'profiler.mount_prefix' => '/_profiler',
     ],
 
