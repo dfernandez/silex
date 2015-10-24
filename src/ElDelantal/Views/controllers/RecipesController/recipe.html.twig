@@ -1,0 +1,13 @@
+{% extends 'layout/content-dynamic.html.twig' %}
+
+{% block title %}Las recetas - {{ title }}{% endblock %}
+
+{% block content %}
+
+    <h1>{{ title }}</h1>
+    <div class="thumbnail">
+        <img src="{{ image }}" class="img-responsive" />
+    </div>
+    <p>{{ description }}</p>
+
+{% endblock %}

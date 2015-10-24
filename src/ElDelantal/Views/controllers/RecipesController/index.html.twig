@@ -1,4 +1,4 @@
-{% extends 'layout/content.html.twig' %}
+{% extends 'layout/content-static.html.twig' %}
 
 {% block title %}Las recetas{% endblock %}
 
@@ -6,6 +6,20 @@
 
     <h1>Las recetas</h1>
 
-    <p>Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32</p>
+    <div class="btn-group btn-group-justified" role="group" aria-label="recipes-filters">
+        <a role="button" class="btn btn-default active" href="#">Todas</a>
+        <a role="button" class="btn btn-default" href="#">Carnes</a>
+        <a role="button" class="btn btn-default" href="#">Pescados</a>
+        <a role="button" class="btn btn-default" href="#">Pastas</a>
+        <a role="button" class="btn btn-default" href="#">Arroces</a>
+    </div>
+
+    {% for recipe in recipes %}
+        {% include 'layout/partials/recipe.html.twig' with recipe %}
+
+        {% if loop.index <= adsense %}
+            {% include 'layout/partials/recipe-ads.html.twig' %}
+        {% endif %}
+    {% endfor %}
 
 {% endblock %}

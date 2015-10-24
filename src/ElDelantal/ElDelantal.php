@@ -45,7 +45,9 @@ class ElDelantal extends DoughApp
         $app = $this;
 
         $app[IndexController::class] = $app->share(function () use ($app) {
-            return new IndexController();
+            return new IndexController(
+                $app['services'][Recipes::class]
+            );
         });
 
         $app[FoodsController::class] = $app->share(function () use ($app) {
