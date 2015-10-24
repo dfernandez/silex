@@ -14,6 +14,7 @@ use ElDelantal\Providers\FoodsControllerProvider;
 use ElDelantal\Providers\IndexControllerProvider;
 use ElDelantal\Providers\RecipesControllerProvider;
 use ElDelantal\Providers\UtensilsControllerProvider;
+use \MongoClient;
 
 class ElDelantal extends DoughApp
 {
@@ -35,8 +36,11 @@ class ElDelantal extends DoughApp
     {
         $app = $this;
 
+        $mongoClient = new MongoClient();
+        $mongodb = $mongoClient->selectDB('el-delantal');
+
         $app['services'] = [
-            Recipes::class => new Recipes(),
+            Recipes::class => new Recipes($mongodb),
         ];
 
         $app['most_popular'] = function () use ($app) {

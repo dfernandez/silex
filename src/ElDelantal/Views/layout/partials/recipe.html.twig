@@ -1,7 +1,7 @@
 {% set path = app.path('RecipesController::recipe', {'slug' : recipe.slug_url}) %}
 {% set url = app.url('RecipesController::recipe', {'slug' : recipe.slug_url}) %}
 
-<div class="thumbnail-date">{{ recipe.publish_date }}</div>
+<div class="thumbnail-date">{{ recipe.created_at }}</div>
 <div class="thumbnail">
     <a href="{{ path }}"><img src="{{ recipe.image }}" class="img-responsive" /></a>
     <a href="{{ path }}"><h3>{{ recipe.title }}</h3></a>
