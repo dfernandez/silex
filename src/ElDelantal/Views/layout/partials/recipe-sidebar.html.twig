@@ -1,0 +1,6 @@
+{% set path = app.path('RecipesController::recipe', {'slug' : slug_url}) %}
+
+<div class="thumbnail">
+    <a href="{{ path }}"><img src="{{ image }}" class="img-responsive" /></a>
+    <a href="{{ path }}"><strong>{{ title }}</strong></a>
+</div>

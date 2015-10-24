@@ -9,11 +9,13 @@ use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
 use Silex\Application\TwigTrait;
+use Silex\Application\UrlGeneratorTrait;
 use Silex\Application;
 
 class DoughApp extends Application
 {
     use TwigTrait;
+    use UrlGeneratorTrait;
 
     protected $config = [];
 

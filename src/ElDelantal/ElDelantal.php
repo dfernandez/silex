@@ -38,6 +38,10 @@ class ElDelantal extends DoughApp
         $app['services'] = [
             Recipes::class => new Recipes(),
         ];
+
+        $app['most_popular'] = function () use ($app) {
+            return $app['services'][Recipes::class]->getMostPopular();
+        };
     }
 
     private function registerControllers()

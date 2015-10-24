@@ -32,7 +32,7 @@ class RecipesController
 
     public function recipeAction(ElDelantal $app, Request $request)
     {
-        $recipe = $this->recipes->getById($request->get('id'));
+        $recipe = $this->recipes->getBySlug($request->get('slug'));
 
         return $app->render('controllers/RecipesController/recipe.html.twig', $recipe);
     }

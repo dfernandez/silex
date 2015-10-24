@@ -1,9 +1,10 @@
-{% set url = app.url_generator.generate('RecipesController::recipe', {'slug' : recipe.slug_url, 'id' : recipe.id}) %}
+{% set path = app.path('RecipesController::recipe', {'slug' : recipe.slug_url}) %}
+{% set url = app.url('RecipesController::recipe', {'slug' : recipe.slug_url}) %}
 
 <div class="thumbnail-date">{{ recipe.publish_date }}</div>
 <div class="thumbnail">
-    <a href="{{ url }}"><img src="{{ recipe.image }}" class="img-responsive" /></a>
-    <a href="{{ url }}"><h3>{{ recipe.title }}</h3></a>
-    <div class="fb-like pull-left" data-href="{{ recipe.publish_url }}" data-layout="box_count" data-send="false" data-layout="button_count" data-show-faces="true"></div>
+    <a href="{{ path }}"><img src="{{ recipe.image }}" class="img-responsive" /></a>
+    <a href="{{ path }}"><h3>{{ recipe.title }}</h3></a>
+    <div class="fb-like pull-left" data-href="{{ url }}" data-layout="box_count" data-send="false" data-layout="button_count" data-show-faces="true"></div>
     <p>{{ recipe.description }}</p>
 </div>

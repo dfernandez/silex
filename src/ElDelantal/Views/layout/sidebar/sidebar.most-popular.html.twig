@@ -1,1 +1,5 @@
 <p><strong>Lo más visto...</strong></p>
+
+{% for recipe in app.most_popular %}
+    {% include 'layout/partials/recipe-sidebar.html.twig' with recipe %}
+{% endfor %}
