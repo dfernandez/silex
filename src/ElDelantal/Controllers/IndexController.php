@@ -19,7 +19,7 @@ class IndexController
 
     public function indexAction(ElDelantal $app)
     {
-        $recipes = $this->recipes->getLastRecipes(1);
+        $recipes = $this->recipes->getLastRecipes();
 
         $vars = [
             'recipes' => $recipes,

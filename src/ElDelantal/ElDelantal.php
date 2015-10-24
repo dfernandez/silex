@@ -15,6 +15,7 @@ use ElDelantal\Providers\IndexControllerProvider;
 use ElDelantal\Providers\RecipesControllerProvider;
 use ElDelantal\Providers\UtensilsControllerProvider;
 use \MongoClient;
+use \Twig_Extensions_Extension_Intl;
 
 class ElDelantal extends DoughApp
 {
@@ -36,6 +37,10 @@ class ElDelantal extends DoughApp
     {
         $app = $this;
 
+        // Register Twig Intl extension
+        $app['twig']->addExtension(new Twig_Extensions_Extension_Intl());
+
+        // Initialize mongoDB client
         $mongoClient = new MongoClient();
         $mongodb = $mongoClient->selectDB('el-delantal');
 

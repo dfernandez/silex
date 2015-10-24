@@ -16,7 +16,7 @@ class Recipes
         $this->mongodb = $mongodb;
     }
 
-    public function getLastRecipes($limit = 5)
+    public function getLastRecipes($limit = 10)
     {
 
         return $this->mongodb->recipes->find()->limit($limit)->sort(['created_at' => -1]);

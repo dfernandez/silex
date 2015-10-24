@@ -21,11 +21,11 @@ class RecipesController
 
     public function indexAction(ElDelantal $app)
     {
-        $recipes = $this->recipes->getLastRecipes(1);
+        $recipes = $this->recipes->getLastRecipes();
 
         $vars = [
             'recipes' => $recipes,
-            'adsense' => 0,
+            'adsense' => 1,
         ];
 
         return $app->render('controllers/RecipesController/index.html.twig', $vars);

@@ -8,7 +8,7 @@
 
         {% block content %}{% endblock %}
 
-        <div class="post-footer">&nbsp;</div>
+        <div class="post-footer">Publicada el {{ created_at|localizeddate('long', 'short', 'es_ES') }}</div>
 
         <div class="hr"><a href="#top">Ir arriba</a></div>
 
