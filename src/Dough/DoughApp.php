@@ -2,6 +2,7 @@
 
 namespace Dough;
 
+use Metrics\Metrics;
 use Silex\Provider\HttpFragmentServiceProvider;
 use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
@@ -19,20 +20,27 @@ class DoughApp extends Application
 
     public function __construct()
     {
-        $this->config = require __DIR__.'/../../config/local.php';
+        $app = $this;
+        $app->config = require __DIR__.'/../../config/local.php';
 
-        parent::__construct(['debug' => $this->config['debug']]);
+        parent::__construct(['debug' => $app->config['debug']]);
 
         # Services
-        $this->register(new MonologServiceProvider(), $this->config['monolog']);
-        $this->register(new TwigServiceProvider(), $this->config['twig']);
+        $app->register(new MonologServiceProvider(), $app->config['monolog']);
+        $app->register(new TwigServiceProvider(), $app->config['twig']);
 
         # Web profiling
-        if ($this->config['debug'] === true) {
-            $this->register(new HttpFragmentServiceProvider());
-            $this->register(new ServiceControllerServiceProvider());
-            $this->register(new UrlGeneratorServiceProvider());
-            $this->register(new WebProfilerServiceProvider(), $this->config['profiler']);
+        if ($app->config['debug'] === true) {
+            $app->register(new HttpFragmentServiceProvider());
+            $app->register(new ServiceControllerServiceProvider());
+            $app->register(new UrlGeneratorServiceProvider());
+            $app->register(new WebProfilerServiceProvider(), $app->config['profiler']);
         }
+
+        # Flush metrics
+        $app->finish(function() use ($app) {
+            $publisher = new $app->config['metrics.publisher']();
+            Metrics::flush($publisher);
+        }, 100);
     }
 }

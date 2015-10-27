@@ -9,4 +9,7 @@ $config['monolog']['monolog.logfile'] = __DIR__.'/../var/logs/dev.log';
 # debug
 $config['debug'] = true;
 
+# metrics
+$config['metrics.publisher'] = "Metrics\\Publishers\\FilesystemMetricsPublisher";
+
 return $config;

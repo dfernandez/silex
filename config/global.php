@@ -20,4 +20,7 @@ return [
 
     # debug
     'debug' => false,
+
+    # metrics
+    'metrics.publisher' => "Metrics\\Publishers\\NoopMetricsPublisher",
 ];
