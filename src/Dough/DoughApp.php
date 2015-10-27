@@ -39,7 +39,7 @@ class DoughApp extends Application
 
         # Flush metrics
         $app->finish(function() use ($app) {
-            $publisher = new $app->config['metrics.publisher']();
+            $publisher = new $app->config['metrics.publisher']($app);
             Metrics::flush($publisher);
         }, 100);
     }
